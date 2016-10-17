@@ -4,13 +4,6 @@ import graph_tool
 
 def main():
 	parser = argparse.ArgumentParser()
-	pagerank = True
-	betweenness = True
-	closeness = True
-	eigenvector = True
-	katz = True
-	hits = True
-	eigentrust = True
 	parser.add_argument('infile', nargs='?', type=argparse.FileType('r'), default=sys.stdin)
 	parser.add_argument('outfile', nargs='?', type=argparse.FileType('w'), default=sys.stdout)
 	parser.add_argument('-d', '--degree', action='store_true', help='Get degree of the nodes')
