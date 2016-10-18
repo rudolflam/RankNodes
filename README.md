@@ -1,6 +1,7 @@
 # RankNodes
 RankNodes is a simple utility based on graph-tool that takes a tsv for a graph and outputs a tsv listing the centralities of each node in that graph.
 <br><br>
+**Requirement** Ubuntu 14.04+
 <b> Dependancies: python 2.7, graph-tool</b>
 ## Installation
 
