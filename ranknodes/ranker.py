@@ -52,19 +52,20 @@ def make_graph(args):
     for edge, properties in edges2properties.items():
         for p, v in properties.items():
             total_properties[p][tuple([nodes2ids[u] for u in e])] = v
-    return G, ids2nodes, nodes2ids
+    return G, ids2nodes, nodes2ids, total_properties
 
-def run(G, ids2nodes, nodes2ids, degree, betweenness, closeness, pagerank, eigenvector, katz, hits, eigentrust, use_json=True):
-    items = sorted_items(G, degree, betweenness, closeness, pagerank, eigenvector, katz, hits, eigentrust)
+def run(G, total_properties, ids2nodes, nodes2ids, degree, betweenness, closeness, pagerank, eigenvector, katz, hits, eigentrust, use_json=True):
+    items = sorted_items(G, total_properties, degree, betweenness, closeness, pagerank, eigenvector, katz, hits, eigentrust)
+    
     #if args.nojson:
-    if use_json:
+    if not use_json:
         for v, props in items:
             print('\t'.join([ids2nodes[int(v)], '\t'.join([str(value) for name, value in sorted(props.items())])]))
     else:
         for v, props in items:
             print('\t'.join([ids2nodes[int(v)], json.dumps(props, sort_keys=True)]))
     
-def sorted_items(G, degree=False, betweenness=False, closeness=False, pagerank=False, eigenvector=False, katz=False, hits=False, eigentrust=False, rankby=None):
+def sorted_items(G, total_properties, degree=False, betweenness=False, closeness=False, pagerank=False, eigenvector=False, katz=False, hits=False, eigentrust=False, rankby=None):
     vertex_values = {}
     get_centrality = get_centrality_maker(vertex_values)
     if degree:
@@ -83,7 +84,7 @@ def sorted_items(G, degree=False, betweenness=False, closeness=False, pagerank=F
     if closeness:
         get_centrality(G, identity, gt.closeness, 'closeness')
     if eigenvector:
-        get_centrality(G, lambda x: x[1], gt.eigenvector, 'eigenvector')
+        get_centrality(G, lambda x: x[1],gt.eigenvector, 'eigenvector')
     if katz:
         get_centrality(G, identity, gt.katz, 'katz')
     if hits:
