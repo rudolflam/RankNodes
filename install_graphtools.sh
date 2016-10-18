@@ -7,7 +7,7 @@ else
 	echo "Installing for Ubuntu $DISTRIBUTION"
 fi
 if [[ "$DISTRIBUTION" == "trusty" ]]; then
-    sudo add-apt-repository ppa:ubuntu-toolchain-r/test;
+    sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test;
 fi
 FILE="/etc/apt/sources.list"
 
@@ -23,8 +23,8 @@ sudo apt-get update;
 if [ "$1" == "python3" ]; 
 then
 	echo "Installing for graph-tool python3"
-	sudo apt-get install python3-graph-tool;
+	sudo apt-get install -y python3-graph-tool;
 else
 	echo "Installing for graph-tool python2"
-	sudo apt-get install python-graph-tool;
+	sudo apt-get install -y python-graph-tool;
 fi
