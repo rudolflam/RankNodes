@@ -20,7 +20,7 @@ Go to your directory
 cd RankNodes
 ```
 Install the package and dependancies
-**Note: installing graph-tool requires modification /etc/apt/sources.list! This file may not be in the correct location for virtual environments!**
+**Note: installing graph-tool requires modification /etc/apt/sources.list! This file may not be accessible for cloud virtual environments!**
 ```
 make install
 ```
