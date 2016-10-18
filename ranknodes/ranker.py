@@ -94,5 +94,5 @@ def sorted_items(G, degree=False, betweenness=False, closeness=False, pagerank=F
         get_centrality(G, identity, lambda G: gt.eigentrust(G, w), 'eigentrust')    
     if vertex_values:
         rank_by = rankby if rankby in choices else sorted(vertex_values.items())[0][1].keys()[0]
-
-    return sorted(vertex_values.items(), key=lambda (k,v): v[rank_by], reverse=True)
+    import math
+    return sorted({k:v for k,v in vertex_values.items() if not math.isnan(v[rank_by])}.items(), key=lambda (k,v): v[rank_by], reverse=True)
