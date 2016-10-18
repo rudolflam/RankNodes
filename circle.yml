@@ -3,4 +3,4 @@ machine:
     version: 2.7.12
 test:
   override:
-    - python ./ranknodes/test/test.py -v
+    - cd ./ranknodes/test/ && python test.py -v
