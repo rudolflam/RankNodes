@@ -23,8 +23,8 @@ sudo apt-get update;
 if [ "$1" == "python3" ]; 
 then
 	echo "Installing for graph-tool python3"
-	sudo apt-get install -y python3-graph-tool;
+	sudo apt-get install -y --force-yes python3-graph-tool;
 else
 	echo "Installing for graph-tool python2"
-	sudo apt-get install -y python-graph-tool;
+	sudo apt-get install -y --force-yes python-graph-tool;
 fi
