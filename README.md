@@ -6,6 +6,7 @@ RankNodes is a simple utility based on graph-tool that takes a tsv for a graph a
 ## Installation
 
 ### To install:
+
 Install python 2.7
 ```
 sudo apt-get install python2.7 
@@ -19,6 +20,7 @@ Go to your directory
 cd RankNodes
 ```
 Install the package and dependancies
+**Note: installing graph-tool requires modification /etc/apt/sources.list! This file may not be in the correct location for virtual environments!**
 ```
 make install
 ```
