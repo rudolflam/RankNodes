@@ -1,3 +1,6 @@
+<a href='http://ranknodes.readthedocs.io/en/latest/?badge=latest'>
+    <img src='https://readthedocs.org/projects/ranknodes/badge/?version=latest' alt='Documentation Status' />
+</a>
 # RankNodes
 RankNodes is a simple utility based on graph-tool that takes a tsv for a graph and outputs a tsv listing the centralities of each node in that graph.
 <br><br>
