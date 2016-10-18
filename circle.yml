@@ -3,4 +3,4 @@ machine:
     version: 2.7.12
 test:
   override:
-    - python RankNodes/ranknodes/test/test.py -v
+    - python ./ranknodes/test/test.py -v
