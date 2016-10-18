@@ -7,8 +7,8 @@ else
 	echo "Installing for Ubuntu $DISTRIBUTION"
 fi
 
-#FILE="/etc/apt/sources.list"
-FILE="temp.txt"
+FILE="/etc/apt/sources.list"
+
 L1="deb http://downloads.skewed.de/apt/$DISTRIBUTION $DISTRIBUTION universe"
 L2="deb-src http://downloads.skewed.de/apt/$DISTRIBUTION $DISTRIBUTION universe"
 
