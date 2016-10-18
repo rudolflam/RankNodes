@@ -1,3 +1,4 @@
+<img src='https://snap-ci.com/rudolflam/RankNodes/branch/master/build_image' alt='Build Status' />
 <a href='http://ranknodes.readthedocs.io/en/latest/?badge=latest'>
     <img src='https://readthedocs.org/projects/ranknodes/badge/?version=latest' alt='Documentation Status' />
 </a>
