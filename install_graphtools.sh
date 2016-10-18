@@ -6,17 +6,20 @@ if [[ ! "trusty wily xenial yakkety" == *"$DISTRIBUTION"*  ]]; then
 else
 	echo "Installing for Ubuntu $DISTRIBUTION"
 fi
-
+if [[ "$DISTRIBUTION" == "trusty" ]]; then
+    sudo add-apt-repository ppa:ubuntu-toolchain-r/test;
+fi
 FILE="/etc/apt/sources.list"
 
 L1="deb http://downloads.skewed.de/apt/$DISTRIBUTION $DISTRIBUTION universe"
 L2="deb-src http://downloads.skewed.de/apt/$DISTRIBUTION $DISTRIBUTION universe"
 
 if [ -z "$(grep "$L1" "$FILE")" ]; then 
-	sudo echo $L1 >> $FILE
-	sudo echo $L2 >> $FILE
+	echo $L1 >> $FILE
+	echo $L2 >> $FILE
 fi
 
+sudo apt-get update;
 if [ "$1" == "python3" ]; 
 then
 	echo "Installing for graph-tool python3"
