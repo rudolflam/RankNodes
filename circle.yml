@@ -1,6 +1,10 @@
 machine:
   python:
     version: 2.7.12
+dependencies:
+  pre:
+    - sudo apt-get update; sudo add-apt-repository ppa:ubuntu-toolchain-r/test; sudo apt-get install python-graph-tool
 test:
   override:
     - cd ./ranknodes/test/ && python test.py -v
+
