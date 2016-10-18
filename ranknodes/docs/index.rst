@@ -212,8 +212,18 @@ The output will include all the options for the :option:`-r`  ::
                                 object
           -r {PageRank,betweenness,closeness,eigenvector,katz,HITS authority,HITS hubs,eigentrust}, --rankby {PageRank,betweenness,closeness,eigenvector,katz,HITS authority,HITS hubs,eigentrust}                                Rank nodes by a choice of centrality
 
+Useful commands
+=====================================
 
+When the number of nodes is overwhelming, using the head command in conjunction to this utility is very handy ::
 
+        cat ranknodes/test/test_input.dat | ranknodes -b -c -ev --nojson | head -n 3
+
+will get the top 3 nodes, ranked by betweenness, with their betweenness, closeness, and eigenvector centrality values. Likewise, you can do so for the bottom 3 nodes using the tail command::
+
+        cat ranknodes/test/test_input.dat | ranknodes -b -c -ev --nojson | tail -n 3
+        
+        
 .. toctree::
    :maxdepth: 2
 
