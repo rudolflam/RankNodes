@@ -13,8 +13,8 @@ L1="deb http://downloads.skewed.de/apt/$DISTRIBUTION $DISTRIBUTION universe"
 L2="deb-src http://downloads.skewed.de/apt/$DISTRIBUTION $DISTRIBUTION universe"
 
 if [ -z "$(grep "$L1" "$FILE")" ]; then 
-	echo $L1 >> $FILE
-	echo $L2 >> $FILE
+	sudo echo $L1 >> $FILE
+	sudo echo $L2 >> $FILE
 fi
 
 if [ "$1" == "python3" ]; 
