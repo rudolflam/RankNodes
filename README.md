@@ -25,7 +25,7 @@ cd RankNodes
 Install the package and dependancies
 **Note: installing graph-tool requires modification /etc/apt/sources.list! This file may not be accessible for cloud virtual environments!**
 ```
-make install
+sudo make install
 ```
 
 
@@ -36,7 +36,7 @@ cd {your_RankNodes_directory}
 ```
 Install the package and dependancies
 ```
-make uninstall
+sudo make uninstall
 ```
 ## Usage
 The tool takes as input an edge list in the format of a tsv. Each edge may be followed by a json object to add additional attributes to the edge. Each each is by default directed, so it can be made undirected by setting "directed" attribute to false. A line in the file looks like this:
