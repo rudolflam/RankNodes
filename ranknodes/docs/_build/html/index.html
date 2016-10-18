@@ -6,9 +6,9 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Welcome to ranknodes’s documentation! &#8212; ranknodes 0.1 documentation</title>
+    <title>Welcome to RankNodes’s documentation! &#8212; ranknodes 0.1 documentation</title>
     
-    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinxdoc.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     
     <script type="text/javascript">
@@ -25,55 +25,41 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="ranknodes 0.1 documentation" href="#" />
-   
-  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
-
+    <link rel="top" title="ranknodes 0.1 documentation" href="#" /> 
   </head>
   <body role="document">
-  
-
-    <div class="document">
-      <div class="documentwrapper">
-        <div class="bodywrapper">
-          <div class="body" role="main">
-            
-  <div class="section" id="welcome-to-ranknodes-s-documentation">
-<h1>Welcome to ranknodes&#8217;s documentation!<a class="headerlink" href="#welcome-to-ranknodes-s-documentation" title="Permalink to this headline">¶</a></h1>
-<p>Contents:</p>
-<div class="toctree-wrapper compound">
-</div>
-</div>
-<div class="section" id="indices-and-tables">
-<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
-<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
-<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
-</ul>
-</div>
-
-
-          </div>
-        </div>
-      </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">ranknodes 0.1 documentation</a> &#187;</li> 
+      </ul>
+    </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
   <h3><a href="#">Table Of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Welcome to ranknodes&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#">Welcome to RankNodes&#8217;s documentation!</a></li>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#usage">Usage</a></li>
+<li><a class="reference internal" href="#core-options">Core options</a><ul>
+<li><a class="reference internal" href="#betweenness-centrality">Betweenness centrality</a></li>
+<li><a class="reference internal" href="#closeness-centrality">Closeness centrality</a></li>
+<li><a class="reference internal" href="#eigentrust-centrality">Eigentrust centrality</a></li>
+<li><a class="reference internal" href="#eigenvector-centrality">Eigenvector centrality</a></li>
+<li><a class="reference internal" href="#hits-centrality">HITS centrality</a></li>
+<li><a class="reference internal" href="#katz-centrality">Katz centrality</a></li>
+<li><a class="reference internal" href="#pagerank">PageRank</a></li>
+<li><a class="reference internal" href="#vertex-degrees">Vertex degrees</a></li>
+<li><a class="reference internal" href="#combinations">Combinations</a></li>
+<li><a class="reference internal" href="#additional-option">Additional option</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#indices-and-tables">Indices and tables</a></li>
 </ul>
-<div class="relations">
-<h3>Related Topics</h3>
-<ul>
-  <li><a href="#">Documentation overview</a><ul>
-  </ul></li>
-</ul>
-</div>
+
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -93,22 +79,274 @@
 <script type="text/javascript">$('#searchbox').show(0);</script>
         </div>
       </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="welcome-to-ranknodes-s-documentation">
+<h1>Welcome to RankNodes&#8217;s documentation!<a class="headerlink" href="#welcome-to-ranknodes-s-documentation" title="Permalink to this headline">¶</a></h1>
+<p>RankNodes is a simple utility based on graph-tool that takes a tsv for a graph and outputs a tsv listing the centralities of each node in that graph.</p>
+</div>
+<div class="section" id="installation">
+<h1>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h1>
+<p>First install the dependancies
+The utility is written in python 2.7. Type this into the console:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">apt</span><span class="o">-</span><span class="n">get</span> <span class="n">install</span> <span class="n">python2</span><span class="o">.</span><span class="mi">7</span>
+</pre></div>
+</div>
+<p>to install it.</p>
+<p>We can now download the package from github</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">rudolflam</span><span class="o">/</span><span class="n">RankNodes</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+<p>and then move into the directory</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">RankNodes</span>
+</pre></div>
+</div>
+<p>Next we want to install the graph-tool package. This python package requires Ubuntu 14.04+.
+If you meet the requirement you can use the Makefile to install it.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">make</span> <span class="n">install_all</span>
+</pre></div>
+</div>
+<p>This will install both the correct graph-tool package and our ranknodes package. However, you may want to compile and install your own graph-tool package. In that case you can:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">make</span> <span class="n">install</span>
+</pre></div>
+</div>
+<p>to only install the ranknodes.</p>
+<p>The Makefile also comes with an uninstall command which you can access via.:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">sudo</span> <span class="n">make</span> <span class="n">uninstall</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="usage">
+<h1>Usage<a class="headerlink" href="#usage" title="Permalink to this headline">¶</a></h1>
+<p>The tool takes as input an edge list in the format of a tsv. Each edge may be followed by a json object to add additional attributes to the edge. Each each is by default directed, so it can be made undirected by setting &#8220;directed&#8221; attribute to false. A line in the file looks like this:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">vertex1</span> <span class="n">vertex0</span> <span class="p">{</span><span class="s2">&quot;weight&quot;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s2">&quot;directed&quot;</span><span class="p">:</span> <span class="n">false</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>This line indicates that there is an edge from vertex1 to vertex0. This edge is undirected and has a weight of 9.</p>
+<p>If no json object is provided default values of weight=1 and directed=True is used.</p>
+<p>As an example, we have provided a sample file, test_input.dat, in ranknodes/test/. You can try it using:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">ranknodes</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">test_input</span><span class="o">.</span><span class="n">dat</span> <span class="o">|</span> <span class="n">ranknodes</span> <span class="o">-</span><span class="n">c</span>
+</pre></div>
+</div>
+<p>to pipe in the input or</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="n">ranknodes</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">test_input</span><span class="o">.</span><span class="n">dat</span> <span class="o">-</span><span class="n">c</span>
+</pre></div>
+</div>
+<p>to compute the closeness centrality ranking of the nodes. This returns</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="mi">23871</span>   <span class="mf">0.714285714286</span>
+<span class="mi">23778</span>   <span class="mf">0.555555555556</span>
+<span class="mi">23732</span>   <span class="mf">0.555555555556</span>
+<span class="mi">58098</span>   <span class="mf">0.416666666667</span>
+<span class="mi">58009</span>   <span class="mf">0.384615384615</span>
+<span class="mi">58256</span>   <span class="mf">0.333333333333</span>
+</pre></div>
+</div>
+<p>where the first column is the list of nodes&#8217; ids and the second column is the list of corresponding betweenness values.
+Notice that there are only 6 out of the 7 nodes found in the example data file. The reason one node is missing is that a node&#8217;s betweenness value is NaN and is thus removed from the list. Likewise for other rankings any nodes with NaN values found in the ranking criterion will be removed.</p>
+<p>The output of the utility is by default stdout. However, it can be overridden</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">cat</span> <span class="n">ranknodes</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">test_input</span><span class="o">.</span><span class="n">dat</span> <span class="o">|</span> <span class="n">ranknodes</span> <span class="o">-</span><span class="n">c</span> <span class="o">&gt;</span> <span class="n">output</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="n">ranknodes</span><span class="o">/</span><span class="n">test</span><span class="o">/</span><span class="n">test_input</span><span class="o">.</span><span class="n">dat</span> <span class="n">output</span><span class="o">.</span><span class="n">txt</span> <span class="o">-</span><span class="n">c</span>
+</pre></div>
+</div>
+<p>to write the output to output.txt.</p>
+</div>
+<div class="section" id="core-options">
+<h1>Core options<a class="headerlink" href="#core-options" title="Permalink to this headline">¶</a></h1>
+<p>The tool comes with several options:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>betweenness centrality</li>
+<li>closeness centrality</li>
+<li>eigentrust centrality</li>
+<li>eigenvector centrality</li>
+<li>HITS centrality</li>
+<li>Katz centrality</li>
+<li>PageRank</li>
+<li>vertex degrees</li>
+</ol>
+</div></blockquote>
+<div class="section" id="betweenness-centrality">
+<h2>Betweenness centrality<a class="headerlink" href="#betweenness-centrality" title="Permalink to this headline">¶</a></h2>
+<p>To use vertex degrees ranking <code class="xref std std-option docutils literal"><span class="pre">-b</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">b</span>
+</pre></div>
+</div>
+<p>This will rank nodes using their betweenness centrality.</p>
+</div>
+<div class="section" id="closeness-centrality">
+<h2>Closeness centrality<a class="headerlink" href="#closeness-centrality" title="Permalink to this headline">¶</a></h2>
+<p>To use vertex degrees ranking <code class="xref std std-option docutils literal"><span class="pre">-c</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">c</span>
+</pre></div>
+</div>
+<p>This will rank nodes using their closeness centrality.</p>
+</div>
+<div class="section" id="eigentrust-centrality">
+<h2>Eigentrust centrality<a class="headerlink" href="#eigentrust-centrality" title="Permalink to this headline">¶</a></h2>
+<p>To use vertex degrees ranking <code class="xref std std-option docutils literal"><span class="pre">-et</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">et</span>
+</pre></div>
+</div>
+<p>This will rank nodes using their eigentrust centrality.</p>
+</div>
+<div class="section" id="eigenvector-centrality">
+<h2>Eigenvector centrality<a class="headerlink" href="#eigenvector-centrality" title="Permalink to this headline">¶</a></h2>
+<p>To use vertex degrees ranking <code class="xref std std-option docutils literal"><span class="pre">-ev</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">ev</span>
+</pre></div>
+</div>
+<p>This will rank nodes using their eigenvector centrality.</p>
+</div>
+<div class="section" id="hits-centrality">
+<h2>HITS centrality<a class="headerlink" href="#hits-centrality" title="Permalink to this headline">¶</a></h2>
+<p>To use vertex degrees ranking <code class="xref std std-option docutils literal"><span class="pre">-hc</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">hc</span>
+</pre></div>
+</div>
+<p>This will output 2 columns right of the node ids column. The first is the authority value of the nodes and the second is the hub value. This will rank nodes using their HITS authority centrality.</p>
+</div>
+<div class="section" id="katz-centrality">
+<h2>Katz centrality<a class="headerlink" href="#katz-centrality" title="Permalink to this headline">¶</a></h2>
+<p>To use vertex degrees ranking <code class="xref std std-option docutils literal"><span class="pre">-kc</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">kc</span>
+</pre></div>
+</div>
+<p>This will rank nodes using their Katz centrality.</p>
+</div>
+<div class="section" id="pagerank">
+<h2>PageRank<a class="headerlink" href="#pagerank" title="Permalink to this headline">¶</a></h2>
+<p>To use vertex degrees ranking <code class="xref std std-option docutils literal"><span class="pre">-pr</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">pr</span>
+</pre></div>
+</div>
+<p>This will rank nodes using their PageRank.</p>
+</div>
+<div class="section" id="vertex-degrees">
+<h2>Vertex degrees<a class="headerlink" href="#vertex-degrees" title="Permalink to this headline">¶</a></h2>
+<p>To use vertex degrees ranking <code class="xref std std-option docutils literal"><span class="pre">-d</span></code>:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>This will output 2 columns right of the node ids column. The first is the in-degree of the nodes and the second is the out-degree. This will rank nodes using their in-degrees.</p>
+</div>
+<div class="section" id="combinations">
+<h2>Combinations<a class="headerlink" href="#combinations" title="Permalink to this headline">¶</a></h2>
+<p>You can use output multiple rankings as well in a single command. As an example,</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">ev</span> <span class="o">-</span><span class="n">hc</span> <span class="o">-</span><span class="n">kc</span> <span class="o">-</span><span class="n">pr</span> <span class="o">-</span><span class="n">d</span>
+</pre></div>
+</div>
+<p>will out the betweenness centrality, closeness centrality, eigenvector, HITS centrality, Katz centrality, PageRank, and vertex degree for each node. The nodes will be ranked using the lexicographically first option, here it is the betweenness centrality.</p>
+<p>If you want to override the ranking criterion, then use the <code class="xref std std-option docutils literal"><span class="pre">-r</span></code> option.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">ev</span> <span class="o">-</span><span class="n">hc</span> <span class="o">-</span><span class="n">kc</span> <span class="o">-</span><span class="n">pr</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">r</span> <span class="n">closeness</span>
+</pre></div>
+</div>
+<p>This will result in a ranking using the closeness centrality instead of the betweenness centrality.</p>
+</div>
+<div class="section" id="additional-option">
+<h2>Additional option<a class="headerlink" href="#additional-option" title="Permalink to this headline">¶</a></h2>
+<p>Moreover, the json output may not be favorable when outputting to other environments. You may use the <code class="xref std std-option docutils literal"><span class="pre">--nojson</span></code> option to output tsv</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">b</span> <span class="o">-</span><span class="n">c</span> <span class="o">-</span><span class="n">ev</span> <span class="o">-</span><span class="n">hc</span> <span class="o">-</span><span class="n">kc</span> <span class="o">-</span><span class="n">pr</span> <span class="o">-</span><span class="n">d</span> <span class="o">-</span><span class="n">r</span> <span class="n">closeness</span> <span class="o">--</span><span class="n">nojson</span>
+</pre></div>
+</div>
+<p>Inline help is available using the <code class="xref std std-option docutils literal"><span class="pre">-h</span></code>, as usual.</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">ranknodes</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+<dl class="docutils">
+<dt>The output will include all the options for the <code class="xref std std-option docutils literal"><span class="pre">-r</span></code>  ::</dt>
+<dd><dl class="first last docutils">
+<dt>usage: ranknodes [-h] [-d] [-b] [-c] [-pr] [-ev] [-kc] [-hc] [-et] [&#8211;nojson]</dt>
+<dd>[-r {PageRank,betweenness,closeness,eigenvector,katz,HITS authority,HITS hubs,eigentrust}]
+[infile] [outfile]</dd>
+<dt>positional arguments:</dt>
+<dd>infile
+outfile</dd>
+<dt>optional arguments:</dt>
+<dd><table class="first docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-h</span>, <span class="option">--help</span></kbd></td>
+<td>show this help message and exit</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-d</span>, <span class="option">--degree</span></kbd></td>
+<td>Get degree of the nodes</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-b</span>, <span class="option">--betweenness</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Get betweenness centrality</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-c</span>, <span class="option">--closeness</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Get closeness centrality</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-p<var>r</var></span>, <span class="option">--pagerank</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Get pagerank centrality</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-e<var>v</var></span>, <span class="option">--eigenvector</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Get eigenvector centrality</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-k<var>c</var></span>, <span class="option">--katz</span></kbd></td>
+<td>Get katz centrality</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-h<var>c</var></span>, <span class="option">--HITS</span></kbd></td>
+<td>Get HITS centrality</td></tr>
+<tr><td class="option-group" colspan="2">
+<kbd><span class="option">-e<var>t</var></span>, <span class="option">--eigentrust</span></kbd></td>
+</tr>
+<tr><td>&nbsp;</td><td>Get eigentrust centrality</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">--nojson</span></kbd></td>
+<td>List attributes in lexicographic order instead of json
+object</td></tr>
+</tbody>
+</table>
+<p class="last">-r {PageRank,betweenness,closeness,eigenvector,katz,HITS authority,HITS hubs,eigentrust}, &#8211;rankby {PageRank,betweenness,closeness,eigenvector,katz,HITS authority,HITS hubs,eigentrust}                                Rank nodes by a choice of centrality</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+<div class="section" id="indices-and-tables">
+<h1>Indices and tables<a class="headerlink" href="#indices-and-tables" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></li>
+<li><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></li>
+<li><a class="reference internal" href="search.html"><span class="std std-ref">Search Page</span></a></li>
+</ul>
+</div>
+
+
+          </div>
+        </div>
+      </div>
       <div class="clearer"></div>
     </div>
-    <div class="footer">
-      &copy;2016, Rudolf Lam.
-      
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.4.8</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.9</a>
-      
-      |
-      <a href="_sources/index.txt"
-          rel="nofollow">Page source</a>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="nav-item nav-item-0"><a href="#">ranknodes 0.1 documentation</a> &#187;</li> 
+      </ul>
     </div>
-
-    
-
-    
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2016, Rudolf Lam.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.4.8.
+    </div>
   </body>
 </html>
