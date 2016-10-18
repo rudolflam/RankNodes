@@ -3,7 +3,7 @@ machine:
     version: 2.7.12
 dependencies:
   pre:
-    - sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test ; sudo apt-get update; chmod +x ./install_graphtools.sh;sudo ./install_graphtools.sh; sudo apt-get update; sudo apt-get install python-graph-tool
+    - sudo make install_all;
 test:
   override:
     - cd ./ranknodes/test/ && python test.py -v
