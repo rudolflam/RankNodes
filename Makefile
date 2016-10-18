@@ -3,9 +3,10 @@ default:
 install_graphtools:
 	chmod +x ./install_graphtools.sh
 	./install_graphtools.sh
-install: install_graphtools
-	@echo "Installing "
+install: 
 	sudo pip2 install .
+install_all: install_graphtools install
+	@echo "Installing "
 uninstall:
 	sudo pip2 uninstall ranknodes
 	
